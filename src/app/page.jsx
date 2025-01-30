@@ -2,20 +2,27 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 const Homepage = () => {
+  const router = useRouter();
+
   // Function to handle the download resume action
   const handleDownloadResume = () => {
-    // Replace 'resume.pdf' with the actual file name and path in the public directory
     const resumeUrl = "/Kartikey_Experienced_Resume.pdf";
-    // Create a temporary anchor element to trigger the download
     const link = document.createElement("a");
     link.href = resumeUrl;
-    link.download = "Kartikey_Experienced_Resume.pdf"; // The name of the downloaded file
+    link.download = "Kartikey_Experienced_Resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
+
+  // Function to navigate to the contact page
+  const handleContactClick = () => {
+    router.push("/contact");
+  };
+
   return (
     <motion.div
       className="h-full"
@@ -34,10 +41,6 @@ const Homepage = () => {
           <h1 className="text-4xl md:text-6xl font-bold">Hello, I&apos;m Kartikey</h1>
           {/* SUBTITLE */}
           <h2 className="text-2xl md:text-4xl font-semibold">Full Stack Developer</h2>
-          {/* MAIN TITLE */}
-           {/* <h1 className="text-4xl md:text-6xl font-bold">
-             Crafting Digital Experiences, Designing Tomorrow.
-           </h1> */}
           {/* DESC */}
           <p className="md:text-xl">
             A Full-Stack Developer passionate about creating seamless and innovative web solutions.
@@ -45,10 +48,10 @@ const Homepage = () => {
           </p>
           {/* BUTTONS */}
           <div className="w-full flex gap-4">
-            <button  onClick={handleDownloadResume} className="p-4 rounded-lg ring-1 ring-black bg-black text-white">
-              Dowmload Resume
+            <button onClick={handleDownloadResume} className="p-4 rounded-lg ring-1 ring-black bg-black text-white">
+              Download Resume
             </button>
-            <button className="p-4 rounded-lg ring-1 ring-black">
+            <button onClick={handleContactClick} className="p-4 rounded-lg ring-1 ring-black">
               Contact Me
             </button>
           </div>
