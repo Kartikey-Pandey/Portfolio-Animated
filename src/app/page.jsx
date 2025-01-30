@@ -17,12 +17,6 @@ const Homepage = () => {
     link.click();
     document.body.removeChild(link);
   };
-
-  // Function to navigate to the contact page
-  const handleContactClick = () => {
-    router.push("/contact");
-  };
-
   return (
     <motion.div
       className="h-full"
