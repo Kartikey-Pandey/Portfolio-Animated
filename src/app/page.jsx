@@ -45,7 +45,7 @@ const Homepage = () => {
             <button onClick={handleDownloadResume} className="p-4 rounded-lg ring-1 ring-black bg-black text-white">
               Download Resume
             </button>
-            <button onClick={handleContactClick} className="p-4 rounded-lg ring-1 ring-black">
+            <button className="p-4 rounded-lg ring-1 ring-black">
               Contact Me
             </button>
           </div>
