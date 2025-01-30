@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useRouter } from "next/navigation";
+
 
 const Homepage = () => {
-  const router = useRouter();
+ 
 
   // Function to handle the download resume action
   const handleDownloadResume = () => {
