@@ -16,6 +16,10 @@ const Homepage = () => {
     link.click();
     document.body.removeChild(link);
   };
+  // Function to navigate to the contact page
+  const handleContactClick = () => {
+    router.push("/contact");
+  };
   return (
     <motion.div
       className="h-full"
@@ -48,7 +52,7 @@ const Homepage = () => {
             <button  onClick={handleDownloadResume} className="p-4 rounded-lg ring-1 ring-black bg-black text-white">
               Dowmload Resume
             </button>
-            <button className="p-4 rounded-lg ring-1 ring-black">
+            <button onClick={handleContactClick} className="p-4 rounded-lg ring-1 ring-black">
               Contact Me
             </button>
           </div>
